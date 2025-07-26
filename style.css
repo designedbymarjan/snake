@@ -1,16 +1,16 @@
-@font-face {
-  font-family: "IRANYekan";
-  src: url("./font/IRANYekan.woff2") format("woff2"),
-       url("./font/IRANYekan.woff") format("woff"),
-       url("./font/IRANYekan.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+html[dir="rtl"] body {
+  direction: rtl;
+  font-family: "IRANYekan", sans-serif;
+}
+
+html[dir="ltr"] body {
+  direction: ltr;
+  font-family: "Segoe UI", sans-serif;
+  text-align: left;
 }
 
 body {
   margin: 0;
-  font-family: "IRANYekan", sans-serif;
-  direction: rtl;
   background: linear-gradient(135deg, #f4c4f3, #fc67fa);
   display: flex;
   flex-direction: column;
@@ -85,6 +85,12 @@ canvas {
   transition: background 0.4s ease, color 0.4s ease;
 }
 
+html[dir="ltr"] .menu-box {
+  right: auto;
+  left: 20px;
+  text-align: left;
+}
+
 .menu-box hr {
   margin: 8px 0;
   border: none;
@@ -145,11 +151,19 @@ button:disabled {
   border-radius: 10px;
   font-size: 13px;
   max-width: 500px;
-  color: #01579b;
   line-height: 1.8;
-  text-align: right;
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
   transition: background 0.5s ease, color 0.5s ease;
+}
+
+html[dir="rtl"] #legendBox {
+  color: #01579b;
+  text-align: right;
+}
+
+html[dir="ltr"] #legendBox {
+  color: #01579b;
+  text-align: left;
 }
 
 #legendBox span {
