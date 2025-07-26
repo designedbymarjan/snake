@@ -1,49 +1,49 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>بازی مار</title>
+  <title>Snake Game</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="./media/snake (1).png">
 </head>
 <body>
 
   <div class="menu-box">
-    <button id="startBtn">🎮 شروع بازی</button>
-    <button id="restartBtn" style="display:none;">🔄 دوباره</button>
-    <button id="muteBtn">🔊 صدا روشن</button>
+    <button id="startBtn">🎮 Start Game</button>
+    <button id="restartBtn" style="display:none;">🔄 Restart</button>
+    <button id="muteBtn">🔊 Sound On</button>
 
     <hr>
-    <div>🎯 درجه سختی:</div>
-    <button class="difficultyBtn" data-speed="180">آسان</button>
-    <button class="difficultyBtn" data-speed="120">متوسط</button>
-    <button class="difficultyBtn" data-speed="80">سخت</button>
+    <div>🎯 Difficulty:</div>
+    <button class="difficultyBtn" data-speed="180">Easy</button>
+    <button class="difficultyBtn" data-speed="120">Medium</button>
+    <button class="difficultyBtn" data-speed="80">Hard</button>
 
     <hr>
-    <div>🎨 رنگ زمینه:</div>
-    <button class="themeBtn" data-color="#f4c4f3,#fc67fa">صورتی</button>
-    <button class="themeBtn" data-color="#c2ffd8,#465efb">آبی-سبز</button>
-    <button class="themeBtn" data-color="#f6f1d3,#648880">لیمویی</button>
+    <div>🎨 Background Theme:</div>
+    <button class="themeBtn" data-color="#f4c4f3,#fc67fa">Pink</button>
+    <button class="themeBtn" data-color="#c2ffd8,#465efb">Blue-Green</button>
+    <button class="themeBtn" data-color="#f6f1d3,#648880">Lemon</button>
 
     <hr>
-    <div><strong>🧾 راهنمای شکل‌ها:</strong></div>
+    <div><strong>🧾 Legend:</strong></div>
     <div id="legendBox">
-      <div><span class="emoji">🍎</span><span>سیب معمولی:</span> +1 امتیاز</div>
-      <div><span class="emoji">🍏</span><span>سیب طلایی:</span> +3 امتیاز و تقویت</div>
-      <div><span class="emoji">🟢</span><span>خوراکی فرارکننده:</span> +2 امتیاز</div>
-      <div><span class="emoji">❄️</span><span>یخ‌زدگی:</span> توقف لحظه‌ای</div>
+      <div><span class="emoji">🍎</span><span>Red Apple:</span> +1 point</div>
+      <div><span class="emoji">🍏</span><span>Golden Apple:</span> +3 points and power-up</div>
+      <div><span class="emoji">🟢</span><span>Running Food:</span> +2 points</div>
+      <div><span class="emoji">❄️</span><span>Freeze:</span> temporary pause</div>
     </div>
   </div>
 
   <div class="container">
     <canvas id="gameCanvas" width="500" height="500"></canvas>
-    <div id="scoreBox">امتیاز: <span id="score">0</span> | رکورد: <span id="highScore">0</span></div>
-    <div id="gameOver">بازی تمام شد!<br>امتیاز نهایی: <span id="finalScore">0</span></div>
-    <div id="powerUpMsg">⚡ قدرت تقویت فعال شد!</div>
-    <div id="freezeMsg">❄️ یخ زدی!</div>
+    <div id="scoreBox">Score: <span id="score">0</span> | High Score: <span id="highScore">0</span></div>
+    <div id="gameOver">Game Over!<br>Final Score: <span id="finalScore">0</span></div>
+    <div id="powerUpMsg">⚡ Power-up activated!</div>
+    <div id="freezeMsg">❄️ You're frozen!</div>
   </div>
 
-  <!-- صداها -->
+  <!-- Sounds -->
   <audio id="eatSound" src="sounds/eat.mp3"></audio>
   <audio id="gameOverSound" src="sounds/gameover.mp3"></audio>
   <audio id="powerUpSound" src="sounds/powerup.mp3"></audio>
