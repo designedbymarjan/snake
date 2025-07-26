@@ -1,0 +1,163 @@
+@font-face {
+  font-family: "IRANYekan";
+  src: url("./font/IRANYekan.woff2") format("woff2"),
+       url("./font/IRANYekan.woff") format("woff"),
+       url("./font/IRANYekan.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: "IRANYekan", sans-serif;
+  direction: rtl;
+  background: linear-gradient(135deg, #f4c4f3, #fc67fa);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background 0.8s ease;
+}
+
+.container {
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+}
+
+canvas {
+  margin-top: 20px;
+  border: 2px solid #225F02;
+  background-color: #fff;
+}
+
+#scoreBox {
+  margin-top: 10px;
+  background: #e0e0e099;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+#gameOver {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #004d40cc;
+  color: #CFCE5D;
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  display: none;
+  z-index: 10;
+}
+
+#powerUpMsg, #freezeMsg {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #CFCE5D;
+  color: #225F02;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  display: none;
+  z-index: 20;
+}
+
+.menu-box {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #9CB5C1;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  font-size: 14px;
+  color: #225F02;
+  z-index: 100;
+  max-width: 200px;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.menu-box hr {
+  margin: 8px 0;
+  border: none;
+  border-top: 1px solid #4B9CA2;
+}
+
+button {
+  padding: 8px 14px;
+  font-size: 13px;
+  border-radius: 8px;
+  border: none;
+  background-color: #4B9CA2;
+  color: white;
+  cursor: pointer;
+  margin: 4px 2px;
+  font-family: inherit;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #528D06;
+  transform: scale(1.05);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.difficultyBtn.active {
+  background-color: #CFCE5D;
+  color: #225F02;
+  font-weight: bold;
+}
+
+.themeBtn {
+  background-color: transparent;
+  border: 2px solid #4B9CA2;
+  margin: 4px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #225F02;
+  background: #ffffff66;
+  transition: all 0.3s ease;
+}
+
+.themeBtn:hover {
+  background-color: #4B9CA2;
+  color: white;
+}
+
+#legendBox {
+  margin-top: 20px;
+  background: #e1f5fe;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  max-width: 500px;
+  color: #01579b;
+  line-height: 1.8;
+  text-align: right;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+#legendBox span {
+  font-weight: bold;
+  color: #00796b;
+}
+
+#legendBox .emoji {
+  font-size: 16px;
+  margin-left: 6px;
+}

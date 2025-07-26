@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>بازی مار</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="./media/snake (1).png">
+</head>
+<body>
+
+  <div class="menu-box">
+    <button id="startBtn">🎮 شروع بازی</button>
+    <button id="restartBtn" style="display:none;">🔄 دوباره</button>
+    <button id="muteBtn">🔊 صدا روشن</button>
+
+    <hr>
+    <div>🎯 درجه سختی:</div>
+    <button class="difficultyBtn" data-speed="180">آسان</button>
+    <button class="difficultyBtn" data-speed="120">متوسط</button>
+    <button class="difficultyBtn" data-speed="80">سخت</button>
+
+    <hr>
+    <div>🎨 رنگ زمینه:</div>
+    <button class="themeBtn" data-color="#f4c4f3,#fc67fa">صورتی</button>
+    <button class="themeBtn" data-color="#c2ffd8,#465efb">آبی-سبز</button>
+    <button class="themeBtn" data-color="#f6f1d3,#648880">لیمویی</button>
+
+    <hr>
+    <div><strong>🧾 راهنمای شکل‌ها:</strong></div>
+    <div id="legendBox">
+      <div><span class="emoji">🍎</span><span>سیب معمولی:</span> +1 امتیاز</div>
+      <div><span class="emoji">🍏</span><span>سیب طلایی:</span> +3 امتیاز و تقویت</div>
+      <div><span class="emoji">🟢</span><span>خوراکی فرارکننده:</span> +2 امتیاز</div>
+      <div><span class="emoji">❄️</span><span>یخ‌زدگی:</span> توقف لحظه‌ای</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <canvas id="gameCanvas" width="500" height="500"></canvas>
+    <div id="scoreBox">امتیاز: <span id="score">0</span> | رکورد: <span id="highScore">0</span></div>
+    <div id="gameOver">بازی تمام شد!<br>امتیاز نهایی: <span id="finalScore">0</span></div>
+    <div id="powerUpMsg">⚡ قدرت تقویت فعال شد!</div>
+    <div id="freezeMsg">❄️ یخ زدی!</div>
+  </div>
+
+  <!-- صداها -->
+  <audio id="eatSound" src="sounds/eat.mp3"></audio>
+  <audio id="gameOverSound" src="sounds/gameover.mp3"></audio>
+  <audio id="powerUpSound" src="sounds/powerup.mp3"></audio>
+  <audio id="startSound" src="sounds/start.mp3"></audio>
+  <audio id="bgMusic" src="sounds/bg.mp3" loop></audio>
+  <audio id="hissSound" src="sounds/hiss.mp3" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
