@@ -1,6 +1,6 @@
 // 🎮 Snake Game with Theme Support
 
-// المان‌ها
+// Elements
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
@@ -38,16 +38,12 @@ let totalSeconds = 0;
 let appleBounceOffset = 0;
 let bounceDirection = 1;
 
-
-// 🎨 مدیریت تغییر تم رنگی
-const themeButtons1 = document.querySelectorAll(".themeBtn");
-
+// 🎨 Theme color change handling
 themeButtons.forEach(btn => {
   btn.addEventListener("click", () => {
     const colors = btn.dataset.color.split(",");
     document.body.style.background = `linear-gradient(135deg, ${colors[0]}, ${colors[1]})`;
 
-    // تغییر رنگ منوی تنظیمات و دکمه‌ها
     const menuBox = document.querySelector(".menu-box");
     menuBox.style.backgroundColor = colors[0];
 
@@ -57,20 +53,19 @@ themeButtons.forEach(btn => {
       button.style.color = "#fff";
     });
 
-    // ذخیره تم انتخاب‌شده در حافظه مرورگر
+    // Save selected theme
     localStorage.setItem("themeColor1", colors[0]);
     localStorage.setItem("themeColor2", colors[1]);
   });
 });
 
-// 🧠 لود تم ذخیره‌شده هنگام ورود دوباره
+// 🧠 Load saved theme on reload
 window.addEventListener("load", () => {
   const color1 = localStorage.getItem("themeColor1");
   const color2 = localStorage.getItem("themeColor2");
 
   if (color1 && color2) {
     document.body.style.background = `linear-gradient(135deg, ${color1}, ${color2})`;
-
     const menuBox = document.querySelector(".menu-box");
     menuBox.style.backgroundColor = color1;
 
@@ -82,8 +77,7 @@ window.addEventListener("load", () => {
   }
 });
 
-
-// موقعیت‌های تصادفی
+// Random grid location
 function randomGrid() {
   return Math.floor(Math.random() * (canvasSize / boxSize));
 }
@@ -225,7 +219,7 @@ function spawnFleeingFood() {
 
 function triggerFreeze() {
   freezeTimer = 90;
-  powerUpMsg.textContent = "❄️ یخ زدی!";
+  powerUpMsg.textContent = "❄️ You're frozen!";
   powerUpMsg.style.display = "block";
   setTimeout(() => powerUpMsg.style.display = "none", 2000);
 }
@@ -272,7 +266,7 @@ function gameOver() {
   highScoreEl.textContent = highScore;
 }
 
-// رویدادها
+// Events
 document.querySelectorAll(".difficultyBtn").forEach(btn => {
   btn.addEventListener("click", () => {
     speed = parseInt(btn.dataset.speed);
@@ -286,7 +280,7 @@ startBtn.addEventListener("click", startGame);
 restartBtn.addEventListener("click", startGame);
 muteBtn.addEventListener("click", () => {
   muted = !muted;
-  muteBtn.textContent = muted ? "🔇 صدا قطع" : "🔊 صدا روشن";
+  muteBtn.textContent = muted ? "🔇 Mute" : "🔊 Sound On";
   bgMusic.pause(); hissSound.pause();
 });
 
